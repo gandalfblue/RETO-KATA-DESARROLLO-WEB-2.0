@@ -23,34 +23,6 @@ public class TodoController {
     @Autowired
     private TodoService todoService;
 
-//    @GetMapping(value = "/todolist")
-//    public ResponseEntity<List<Todo>> list(Long id) {
-//        return todoService.getAllTodo(id);
-//    }//
-//
-//    @PostMapping(value = "/todo")
-//    public ResponseEntity<Todo> save(@RequestBody Todo todo) {
-//        return todoService.createTodo(todo);
-//    }//
-//
-//    @PutMapping(value = "/todo")
-////    public Todo save(@RequestBody Todo todo){
-//        if(todo.get(id) != null){
-//            return todoService.save(todo);
-//        }
-//        throw new RuntimeException("No existe el id para actualizar");
-////    }//
-//
-//    @DeleteMapping(value = "/{id}/todo")
-//    public void delete(@PathVariable("id") Long id) {
-//        todoService.deleteTodoById(id);
-//    }//
-//
-//    @GetMapping(value = "/{id}/todo")
-//    public ResponseEntity<Todo> get(@PathVariable("id") Long id) {
-//        return todoService.getTodoById(id);
-//    }
-
     /*
        Metodo que sirve para enrutarme a la clase service para obtener un get de todos los Todos.
    */
