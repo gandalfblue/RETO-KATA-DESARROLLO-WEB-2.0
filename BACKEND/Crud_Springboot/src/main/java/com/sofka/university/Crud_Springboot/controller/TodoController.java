@@ -11,21 +11,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
-/*
- Clase que representa el controlador del backend y se especifican como van a salir los enpoints hacia el front
+/**
+ * Clase que representa el controlador del backend y se especifican como van a salir los enpoints hacia el front
  */
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class TodoController {
 
+    /**
+     * Objeto que representa a a la clase TodoService
+     */
     @Autowired
     private TodoService todoService;
 
-    /*
-       Metodo que sirve para enrutarme a la clase service para obtener un get de todos los Todos.
-   */
+    /**
+     *Metodo que sirve para enrutarme a la clase service para obtener un get de todos los Todos.
+     * @param id
+     * @return Codigos de estado de respuesta Http
+     */
     @GetMapping(value = "/todolist")
     public ResponseEntity<List<Todo>> getAllTodo(@RequestParam(required = false) Long id) {
         try {
@@ -45,9 +49,11 @@ public class TodoController {
         }
     }
 
-    /*
-         Metodo que sirve para enrutarme a la clase service para guardar un Todo
-    */
+    /**
+     * Metodo que sirve para enrutarme a la clase service para guardar un Todo
+     * @param todo
+     * @return Codigos de estado de respuesta Http
+     */
     @PostMapping(value = "/todo")
     public ResponseEntity<Todo> createTodo(@RequestBody Todo todo) {
         try {
@@ -58,9 +64,11 @@ public class TodoController {
         }
     }
 
-    /*
-        Metodo que sirve para enrutarme a la clase service para borrar un solo Todo mediante el id.
-    */
+    /**
+     * Metodo que sirve para enrutarme a la clase service para borrar un solo Todo mediante el id.
+     * @param id
+     * @return Codigos de estado de respuesta Http
+     */
     @DeleteMapping(value = "/{id}/todo")
     public ResponseEntity<String> deleteTodoById(@PathVariable("id") Long id) {
         try {
@@ -71,9 +79,11 @@ public class TodoController {
         }
     }
 
-    /*
-        Metodo que sirve para enrutarme a la clase service para obtener un get de un solo T odo mediante el id.
-    */
+    /**
+     * Metodo que sirve para enrutarme a la clase service para obtener un get de un solo T odo mediante el id.
+     * @param id
+     * @return Codigos de estado de respuesta Http
+     */
     @GetMapping(value = "/{id}/todo")
     public ResponseEntity<Todo> getTodoById(@PathVariable("id") Long id) {
         Optional<Todo> todo = Optional.ofNullable(todoService.get(id));
@@ -85,9 +95,11 @@ public class TodoController {
         }
     }
 
-    /*
-        Metodo que sirve para enrutarme a la clase service para actualizar un solo Todo mediante el id.
-    */
+    /**
+     * Metodo que sirve para enrutarme a la clase service para actualizar un solo Todo mediante el id.
+     * @param todo
+     * @return Codigos de estado de respuesta Http
+     */
     @PutMapping(value = "/todo")
     public ResponseEntity<Todo> updateTodo(@RequestBody Todo todo) {
         if (todo.getId() != null) {

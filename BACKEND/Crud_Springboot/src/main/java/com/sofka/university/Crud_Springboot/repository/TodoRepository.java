@@ -4,8 +4,8 @@ import com.sofka.university.Crud_Springboot.models.Todo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-/*
-    Interfaz que hereda de la interfaz CrudRepository que tiene SpringBoot, todos sus metodos
+/**
+ * Representa a un interfaz que hereda de la interfaz CrudRepository que tiene SpringBoot, todos sus metodos
  */
 @Repository
 public interface TodoRepository extends CrudRepository<Todo, Long> {
