@@ -1,2 +1,4 @@
-# RETO-KATA-SERVICE
- Reto de diseño Web 2.0
+# RETO-KATA-DISEÑO WEB 2.0
+
+## Enlace del video
+## https://youtu.be/2GJpQXfeaJ8
